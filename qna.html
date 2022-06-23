@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/app1.css">
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <!-- fabicon -->
+    <link rel="icon" href="favicon.ico">
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <header>
+        <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+            <a href="logined_index.html" class="navbar-brand">TO GAE THER<br><span class="kr-logo">투개더</span></a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navLinks"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navLinks">
+                <ul class="navbar-nav ms-auto navbar-center">
+                    <li class="nav-item">
+                        <a href="list_hotel.html" class="nav-link">여 행</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="list_restaurant.html" class="nav-link">식 당</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="list_cafe.html" class="nav-link">카 페</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">더보기</a>
+                        <div class="dropdown-menu">
+                            <a href="map.html" class="dropdown-item">지도</a>
+                            <a href="mypage.html" class="dropdown-item">마이페이지</a>
+                            <a href="qna.html" class="dropdown-item">Q&A</a>
+                            <a href="index.html" class="dropdown-item" onclick="alert('로그아웃되었습니다.')">로그아웃</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="qna-container">
+        <div class="inner-container">
+            <!-- Q&A header -->
+            <div class="qna-header">
+                <h1>Q&A</h1>
+            </div>
+
+            <div class="sub-container">
+                <!-- search bar -->
+                <div class="search-container">
+                    <div class="search-input">
+                        <form action="">
+                            <input type="text" placeholder="어떤 서비스가 필요하세요?">
+                            <button type="submit" class="search-button">
+                                <img class="search-img" src="images/search.png" alt="search">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- write button -->
+                <div>
+                    <form action="qna_write.html">
+                        <button type="submit" class="btn btn-warning write_btn">
+                            WRITE
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Q&A board -->
+            <div class="qna-board">
+                <!-- Q&A board header -->
+                <div class="board-header row">
+                    <div class="board-title-info col-sm-7">Subject</div>
+                    <div class="board-title-date col-sm-3">Date</div>
+                    <div class="board-title-user col-sm-2">Name</div>
+                </div>
+
+                <!-- Q&A 공지1/4 -->
+                <div class="board-title row">
+                    <div class="board-title-info col-sm-7">
+                        <span class="qna_category_notice">공지</span>
+                        투개더 서비스 정기점검 안내(06/23 AM 3:00 ~ 6:00)</div>
+                    <div class="board-title-date col-sm-3">2022.06.21</div>
+                    <div class="board-title-user col-sm-2">관리자</div>
+                </div>
+                <section class="board-body">
+                    <p>안녕하세요, 투개더입니다.</p>
+                    <p>더욱 안정적인 서비스 제공을 위한 정기점검을 안내드립니다.</p>
+                    <p>점검 일시 안내</p>
+                    <p>▶ 2022년 6월 23일(목) 오전 03:00 ~ 07:00 (약 3시간)</p>
+                    <p>서비스 이용에 불편을 드려 죄송합니다.</p>
+                    <p>빠른 점검과 안정된 서비스로 찾아 뵙겠습니다.</p>
+                    <p>감사합니다.</p>
+                </section>
+
+                <!-- Q&A 공지2/4 -->
+                <div class="board-title row">
+                    <div class="board-title-info col-sm-7">
+                        <span class="qna_category_notice">공지</span>
+                        투개더 개인정보처리방침 개정 안내(2022. 6. 2)</div>
+                    <div class="board-title-date col-sm-3">2022.06.02</div>
+                    <div class="board-title-user col-sm-2">관리자</div>
+                </div>
+                <section class="board-body">
+                    <p>안녕하세요, 투개더입니다.</p>
+                    <p>보다 나은 서비스 제공을 위해 투개더의 개인정보처리방침이 다음과 같이 변경됨을 알려 드립니다.</p>
+                    <p>▶ 개인정보처리방침 변경 및 시행일 : 2022년 6월 2일</p>
+                    <p>▶ 개인정보처리방침 변경 내용</p>
+                    <p>제 3 조 (개인정보 수집∙이용 목적 및 수집항목 등)</p>
+                    <p>투개더는 더 나은 서비스 제공을 위해 항상 최선을 다하겠습니다.</p>
+                    <p>앞으로도 지속적인 서비스 이용과 관심 부탁드립니다.</p>
+                </section>
+
+                <!-- Q&A 공지3/4 -->
+                <div class="board-title row">
+                    <div class="board-title-info col-sm-7">
+                        <span class="qna_category_notice">공지</span>
+                        신규 업체 등록 관련 안내</div>
+                    <div class="board-title-date col-sm-3">2022.05.05</div>
+                    <div class="board-title-user col-sm-2">관리자</div>
+                </div>
+                <section class="board-body">
+                    <p>안녕하세요, 투개더입니다.</p>
+                    <p>업체 등록을 원하는 회원께서는</p>
+                    <p>상호명, 카테고리, 사업장 주소, 연락처, 이용 가격 및 메뉴판,</p>
+                    <p>사업장 상세사진, 동반 가능한 반려동물의 종류와 제한 사항</p>
+                    <p>등을 빠짐없이 기재하여 게시판에 올려주시면</p>
+                    <p>관리자 검토 후 연락드리겠습니다.</p>
+                </section>
+
+                <!-- Q&A 공지4/4 -->
+                <div class="board-title row">
+                    <div class="board-title-info col-sm-7">
+                        <span class="qna_category_notice">공지</span>
+                        위치 기반 검색 기능이 추가되었습니다.</div>
+                    <div class="board-title-date col-sm-3">2022.05.01</div>
+                    <div class="board-title-user col-sm-2">관리자</div>
+                </div>
+                <section class="board-body">
+                    <p>안녕하세요, 투개더입니다.</p>
+                    <p>보다 나은 서비스 제공을 위해 투개더의 위치 기반 검색 기능이 추가되었음을 알려드립니다.</p>
+                    <p>투개더는 더 나은 서비스 제공을 위해 항상 최선을 다하겠습니다.</p>
+                    <p>앞으로도 지속적인 서비스 이용과 관심 부탁드립니다.</p>
+                </section>
+                
+                <!-- Q&A 문의1/5 -->
+                <div class="board-title row">
+                    <div class="board-title-info col-sm-7">
+                        <span class="qna_category_report">[제보]</span>
+                        기쁨이네 펜션 영업 종료</div>
+                    <div class="board-title-date col-sm-3">2022.05.21</div>
+                    <div class="board-title-user col-sm-2">조유미</div>
+                </div>
+                <section class="board-body">
+                    <p>기쁨이네 펜션은 영업을 안하는 것 같아요! 확인해주세요~</p>
+                </section>
+
+                <!-- Q&A 문의2/5 (비밀글1/3) -->
+                <div class="board-title row">
+                    <div class="board-title-info col-sm-7">
+                        <span class="qna_category_report">[업체 등록]</span>
+                        비밀글입니다.
+                        <span class="qna_category_secret">🔒︎</span>
+                    </div>
+                    <div class="board-title-date col-sm-3">2022.05.16</div>
+                    <div class="board-title-user col-sm-2">이**</div>
+                </div>
+                <section class="board-body board-secret">
+                    <p>비밀번호를 입력하세요.</p>
+                    <input type="password" id="password-input1">
+                </section>
+
+                <!-- Q&A 문의3/5 -->
+                <div class="board-title row">
+                    <div class="board-title-info col-sm-7">
+                        <span class="qna_category_report">[문의]</span>
+                        리뷰 삭제
+                        <span></span>
+                    </div>
+                    <div class="board-title-date col-sm-3">2022.05.13</div>
+                    <div class="board-title-user col-sm-2">김**</div>
+                </div>
+                <section class="board-body">
+                    <p>리뷰 삭제는 어디에서 하나요?</p>
+                </section>
+
+                <!-- Q&A 문의4/5 (비밀글2/3) -->
+                <div class="board-title row">
+                    <div class="board-title-info col-sm-7">
+                        <span class="qna_category_report">[문의]</span>
+                        비밀글입니다.
+                        <span class="qna_category_secret">🔒︎</span>
+                    </div>
+                    <div class="board-title-date col-sm-3">2022.05.10</div>
+                    <div class="board-title-user col-sm-2">성**</div>
+                </div>
+                <section class="board-body board-secret">
+                    <p>비밀번호를 입력하세요.</p>
+                    <input type="password" id="password-input2">
+                </section>
+
+                <!-- Q&A 문의5/5 (비밀글3/3) -->
+                <div class="board-title last-board-title row">
+                    <div class="board-title-info col-sm-7">
+                        <span class="qna_category_report">[제보]</span>
+                        비밀글입니다.
+                        <span class="qna_category_secret">🔒︎</span>
+                    </div>
+                    <div class="board-title-date col-sm-3">2022.05.01</div>
+                    <div class="board-title-user col-sm-2">박**</div>
+                </div>
+                <section class="board-body board-secret">
+                    <p>비밀번호를 입력하세요.</p>
+                    <input type="password" id="password-input3">
+                </section>
+
+                <!-- pagination -->
+                <div class="pagination">
+                    <!-- <a href="#">&laquo;</a> -->
+                    <a class="active" href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <!-- <a href="#">&raquo;</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <hr>
+        <p class="contact">1599-5319</p>
+        <p>평일 10:00 - 18:00</p>
+        <p class="info">상호명: 투개더 | 대표: 김예지, 조유미, 성문식, 이기쁨, 박준현</p>
+        <p class="info">주소: 서울특별시 강남구 테헤란로 415 | 이메일: togaether@bit.camp</p>
+    </footer>
+
+    <script>
+        $(function () {
+            // board-body toggle
+            $(".board-body").hide();
+            $(".board-title").click(function (e) {
+                $(this).next().toggle();
+                // $(this).next().height("auto");
+            });
+
+            // pagination active
+            $(".pagination a").on("click", function () {
+                $(".pagination a").removeClass("active");
+                $(this).addClass("active");
+            })
+
+            // 비밀글(1/3) 보기
+            $("#password-input1").on("keypress", function (e) {
+                if (e.keyCode == 13) {
+                    if ($("#password-input1").val() == '11') {
+                        var post = $("#password-input1").parent();
+                        var title = post.prev().children();
+                        var titleSubject = title.eq(0);
+                        var titleName = title.eq(2);
+                        post.css("textAlign", "left");
+                        titleSubject.text("[업체 등록] 업체 등록");
+                        titleName.text("이기쁨");
+                        post.html(
+                            "<p>업체 등록 요청합니다.</p><p>상호명: URBAN HOTEL&GOLF</p><p>카테고리: 여행</p><p>사업장 주소: 서울특별시 관악구 난곡로64길 5</p><p>연락처: 02-862-6664</p>"
+                        );
+                    } else {
+                        // 비밀번호 오류시 오류메시지창 띄우고 input field 초기화
+                        $("#password-input1").val('');
+                        alert("비밀번호를 다시 입력해주세요.");
+                    }
+                }
+            })
+
+            // 비밀글(2/3) 보기
+            $("#password-input2").on("keypress", function (e) {
+                if (e.keyCode == 13) {
+                    if ($("#password-input2").val() == '11') {
+                        var post = $("#password-input2").parent();
+                        var title = post.prev().children();
+                        var titleSubject = title.eq(0);
+                        var titleName = title.eq(2);
+                        post.css("textAlign", "left");
+                        titleSubject.text("[문의] 업체 수정");
+                        titleName.text("성문식");
+                        post.html(
+                            "<p>업체 정보 수정 요청</p><p>상호명: 술노리아</p><p>카테고리: 식당</p><p>기존 영업시간: 매일 18:00-12:00</p><p>변경 영업시간: 매일 18:00-03:30</p>"
+                        );
+                    } else {
+                        $("#password-input2").val('');
+                        alert("비밀번호를 다시 입력해주세요.");
+                    }
+                }
+            })
+
+            // 비밀글(3/3) 보기
+            $("#password-input3").on("keypress", function (e) {
+                if (e.keyCode == 13) {
+                    if ($("#password-input3").val() == '11') {
+                        var post = $("#password-input3").parent();
+                        var title = post.prev().children();
+                        var titleSubject = title.eq(0);
+                        var titleName = title.eq(2);
+                        post.css("textAlign", "left");
+                        titleSubject.text("[제보] 플렉스빌 반려견 동반 불가");
+                        titleName.text("박준현");
+                        post.html(
+                            "<p>지난 금요일 동대문구에 위치한 플렉스빌에 방문했는데 대형견은 동반 불가하다고 하더라구요.</p><p>확인 부탁드립니다.</p>"
+                        );
+                    } else {
+                        $("#password-input3").val('');
+                        alert("비밀번호를 다시 입력해주세요.");
+                    }
+                }
+            })
+
+        });
+    </script>
+</body>
+
+</html>

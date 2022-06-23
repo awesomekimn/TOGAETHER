@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지도 생성하기</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/app5.css">
+    <!-- fabicon -->
+    <link rel="icon" href="favicon.ico">
+    <!--jquery-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+    <div class="map-wrap">
+        <div id="map" style="width:100%;height:100vh;position:relative;overflow:hidden;"></div>
+        <div class="button">
+            <button class="btn btn-outline-danger map-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+              <span>>></span>
+            </button>
+        </div>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+                <div class="search-container">
+                  <div class="search-input">
+                      <input type="text" placeholder="장소 검색">
+                      <button type="submit" class="search-button">
+                          <img class="search-img" src="images/search.png" alt="search"></button></input>
+                      </button>
+                  </div>
+              </div>
+              </h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="map-item01">
+                <a href="details_hotel.html">
+                    <img  class="map-heart" src = "images/JS애견풀빌라_여행.jpg" alt = "펜션" width = "370", height="200">
+                    <img class="heart" id="lastheart1" src="https://cdn-icons-png.flaticon.com/128/833/833472.png" alt="heartimg"/>
+                    <script>
+                        $(function () {
+                          $("#lastheart1").on("click", function(e) {
+                            e.preventDefault();
+                            $(".map-item01").css("display", "none");
+                            });
+                          });
+                    </script>
+                </a>
+                <div class="star-title">
+                    <h5>JS 애견풀빌라</h5>
+                    <div class="star">
+                    <img class="starimg" src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" alt="별점">
+                    <h6>4.5 / 5</h6>
+                </div>
+                </div>
+              <p>
+                평범한 일상에서 벗어나 마음껏 뛰어놀고 물놀이도 하며 즐길 수 있는 곳 사랑하는 우리 아이들에게 특별한 장소
+               </p>
+            </div>
+             <div class="map-item02">
+               <a href="details_restaurant.html"><img src = "images/초원행_식당.jpg" alt = "펜션" width = "370", height="200">
+                <img class="heart" id="lastheart2" src="https://cdn-icons-png.flaticon.com/128/833/833472.png" alt="heartimg"/>
+                <script>
+                    $(function () {
+                      $("#lastheart2").on("click", function(e) {
+                        e.preventDefault();
+                        $(".map-item02").css("display", "none");
+                        });
+                      });
+                </script>
+            </a>
+               <div class="star-title"></div>
+               <h5>초원행</h5>
+               <div class="star">
+                <img class="starimg" src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" alt="별점">
+                <h6>4.5 / 5</h6>
+
+            </div>
+       
+               <p>
+                맛있는 커피와 라면을 즐길 수 있는 편안한 휴식공간 카페 초원행에서 반려견과 함께 즐거운 시간 보내러오세요
+               </p>
+            </div>
+            </div>
+            </div>
+          </div>
+          <div class="category">
+            <ul>
+                <li id="hotelMenu" onclick="changeMarker('hotel')">
+                    <span class="ico_comm ico_hotel" >여행</span>
+                    <img src="images/hotel.png" alt="호텔">
+                </li>
+                <li id="storeMenu" onclick="changeMarker('store')">
+                    <span class="ico_comm ico_store">식당</span>
+                    <img src="images/room-service.png" alt="식당">
+                </li>
+                <li id="coffeeMenu" onclick="changeMarker('coffee')">
+                    <span class="ico_comm ico_coffee" >카페</span>
+                    <img src="images/breakfast.png" alt="카페">
+                                
+                </li>
+            </ul>
+        </div>
+
+
+<script type="text/javascript"
+ src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=4640a2ed2218b98121f223547f8babd9">
+</script>
+<script>
+
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.478774, 126.987991), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
+    };
+
+    
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+// 현재 위치 팝업창
+const locationLoadSuccess = pos => {
+   const currentPos = new kakao.maps.LatLng(37.499444, 127.029016)
+   map.panTo(currentPos)
+}
+navigator.geolocation.getCurrentPosition(locationLoadSuccess,)
+
+var coffeePositions = [ 
+    
+    new kakao.maps.LatLng(37.496517, 127.036989),
+    new kakao.maps.LatLng(37.501419, 127.029019),
+    new kakao.maps.LatLng(37.498553760499505, 127.02882598822454),
+    new kakao.maps.LatLng(37.503050, 127.028452),
+    new kakao.maps.LatLng(37.49646391248451, 127.02675574250912)                  
+];
+
+var storePositions = [
+
+    new kakao.maps.LatLng(37.497535461505684, 127.02948149502778),
+    new kakao.maps.LatLng(37.502564, 127.031507),
+    new kakao.maps.LatLng(37.500437, 127.029133),
+    new kakao.maps.LatLng(37.49640072567703, 127.02726459882308),
+    new kakao.maps.LatLng(37.495751, 127.037347)
+];
+
+var hotelPositions = [
+    
+    new kakao.maps.LatLng(37.501059, 127.034191),
+    new kakao.maps.LatLng(37.499033, 127.034159),
+    new kakao.maps.LatLng(37.49896834100913, 127.02833986892401),
+    new kakao.maps.LatLng(37.495568, 127.030050),
+    new kakao.maps.LatLng(37.497680616783086, 127.02518427952202)                      
+];    
+
+
+
+var markerImageSrc = "images/loc_cafe.png";  // 마커이미지의 주소입니다. 
+    coffeeMarkers = [], // 카페 마커 객체를 가지고 있을 배열입니다
+    storeMarkers = [], // 식당 마커 객체를 가지고 있을 배열입니다
+    hotelMarkers = []; // 여행 마커 객체를 가지고 있을 배열입니다
+
+    createCoffeeMarkers(); // 카페 마커를 생성하고 커피숍 마커 배열에 추가합니다
+    createStoreMarkers(); // 식당 마커를 생성하고 편의점 마커 배열에 추가합니다
+    createhotelMarkers(); // 여행 마커를 생성하고 주차장 마커 배열에 추가합니다
+
+changeMarker('coffee'); // 지도에 카페 마커가 보이도록 설정합니다    
+
+
+// 마커이미지의 주소와, 크기, 옵션으로 마커 이미지를 생성하여 리턴하는 함수입니다
+function createMarkerImage(src, size, options) {
+    var markerImage = new kakao.maps.MarkerImage(src, size, options);
+    return markerImage;            
+}
+
+// 좌표와 마커이미지를 받아 마커를 생성하여 리턴하는 함수입니다
+function createMarker(position, image) {
+    var marker = new kakao.maps.Marker({
+        position: position,
+        image: image
+    });
+    
+    return marker;  
+}   
+   
+// 카페 마커를 생성하고 카페 마커 배열에 추가하는 함수입니다
+function createCoffeeMarkers() {
+    
+    for (var i = 0; i < coffeePositions.length; i++) {  
+        
+        var imageSize = new kakao.maps.Size(50, 50),
+            imageOptions = {  
+                spriteOrigin: new kakao.maps.Point(0, 0),    
+                spriteSize: new kakao.maps.Size(50, 50),
+                clickable: true  
+            };     
+        
+        // 마커이미지와 마커를 생성합니다
+        var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),    
+            marker = createMarker(coffeePositions[i], markerImage);  
+            
+        // 생성된 마커를 카페 마커 배열에 추가합니다
+        coffeeMarkers.push(marker);
+
+        var iwContent ='<div class="wrap">' + 
+            '        <div class="title1">' + 
+            '            테일더블루' + 
+            '        </div>' + 
+            '        <div class="body1">' + 
+            '            <div class="img">' +
+            '                <img src="images/테일더블루.jpg" width="300" height="150" onclick="location.href=\'details_cafe.html\'">' +
+            '           </div>' + 
+            '            <div class="desc1">' +   
+            '                <div><a href="https://www.instagram.com/tailtheblue_official/" target="_blank" class="link1">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>';
+        iwRemoveable = true;
+        // 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({
+        content : iwContent,
+       
+        removable : iwRemoveable
+        });
+
+        // 마커에 마우스오버 이벤트를 등록합니다
+        kakao.maps.event.addListener(marker, 'click', function() {
+        // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+        infowindow.open(map, marker);
+        });
+
+    }     
+}
+
+
+
+
+
+// 카페 마커들의 지도 표시 여부를 설정하는 함수입니다
+function setCoffeeMarkers(map) {        
+    for (var i = 0; i < coffeeMarkers.length; i++) {  
+        coffeeMarkers[i].setMap(map);
+    }        
+}
+
+// 식당 마커를 생성하고 식당 마커 배열에 추가하는 함수입니다
+function createStoreMarkers() {
+    for (var i = 0; i < storePositions.length; i++) {
+        var markerImageSrc = "images/loc_restaurant.png";
+        var imageSize = new kakao.maps.Size(50, 50),
+            imageOptions = {   
+                spriteOrigin: new kakao.maps.Point(0, 0),    
+                spriteSize: new kakao.maps.Size(50, 50),
+                 
+            };       
+     
+        // 마커이미지와 마커를 생성합니다
+        var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),    
+            marker = createMarker(storePositions[i], markerImage);  
+            
+        // 생성된 마커를 식당 마커 배열에 추가합니다
+        storeMarkers.push(marker); 
+        
+        var iwContent = '<div class="wrap">' + 
+            '        <div class="title2">' + 
+            '            초원행' + 
+            '        </div>' + 
+            '        <div class="body2">' + 
+            '            <div class="img">' +
+            '                <img src="images/초원행_식당.jpg" width="300" height="150" onclick="location.href=\'details_restaurant.html\'">' +
+            '           </div>' + 
+            '            <div class="desc2">' +   
+            '                <div><a href="https://www.instagram.com/cwh.coffee" target="_blank" class="link2">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>'; 
+        iwRemoveable = true;
+        // 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({
+        content : iwContent,
+        removable : iwRemoveable
+        });
+
+        // 마커에 마우스오버 이벤트를 등록합니다
+        kakao.maps.event.addListener(marker, 'click', function() {
+        // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+        infowindow.open(map, marker);
+        });
+    }        
+}
+
+// 식당 마커들의 지도 표시 여부를 설정하는 함수입니다
+function setStoreMarkers(map) {        
+    for (var i = 0; i < storeMarkers.length; i++) {  
+        storeMarkers[i].setMap(map);
+    }        
+}
+
+// 여행 마커를 생성하고 여행 마커 배열에 추가하는 함수입니다
+function createhotelMarkers() {
+    for (var i = 0; i < hotelPositions.length; i++) {
+        var markerImageSrc = "images/loc_accommodation.png";
+        var imageSize = new kakao.maps.Size(50, 50),
+            imageOptions = {   
+                spriteOrigin: new kakao.maps.Point(0, 0),    
+                spriteSize: new kakao.maps.Size(50, 50),
+                clickable: true  
+            };       
+     
+        // 마커이미지와 마커를 생성합니다
+        var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),    
+            marker = createMarker(hotelPositions[i], markerImage);  
+
+        // 생성된 마커를 여행 마커 배열에 추가합니다
+        hotelMarkers.push(marker);    
+        
+        var iwContent = '<div class="wrap">' + 
+            '        <div class="title3">' + 
+            '            JS 애견 풀빌라' + 
+            '        </div>' + 
+            '        <div class="body3">' + 
+            '            <div class="img">' +
+            '                <img src="images/JS애견풀빌라_여행.jpg" width="300" height="150" onclick="location.href=\'details_hotel.html\'">' +
+            '           </div>' + 
+            '            <div class="desc3">' +   
+            '                <div><a href="http://jsresort.kr//" target="_blank" class="link3">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>';
+        iwRemoveable = true;
+        // 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({
+        content : iwContent,
+        removable : iwRemoveable
+        });
+
+        // 마커에 마우스클릭 이벤트를 등록합니다
+        kakao.maps.event.addListener(marker, 'click', function() {
+        // 마커에 마우스클릭 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+        infowindow.open(map, marker);
+        });
+    }                
+}
+
+// 여행 마커들의 지도 표시 여부를 설정하는 함수입니다
+function sethotelMarkers(map) {        
+    for (var i = 0; i < hotelMarkers.length; i++) {  
+      hotelMarkers[i].setMap(map);
+      
+    }        
+}
+
+// 카테고리를 클릭했을 때 type에 따라 카테고리의 스타일과 지도에 표시되는 마커를 변경합니다
+function changeMarker(type) {
+    
+    var coffeeMenu = document.getElementById('coffeeMenu');
+    var storeMenu = document.getElementById('storeMenu');
+    var hotelMenu = document.getElementById('hotelMenu');
+    
+    // 카페 카테고리가 클릭됐을 때
+    if (type === 'coffee') {
+    
+        // 카페 카테고리를 선택된 스타일로 변경하고
+        coffeeMenu.className = 'menu_selected';
+        
+        // 식당과 여행 카테고리는 선택되지 않은 스타일로 바꿉니다
+        storeMenu.className = '';
+        hotelMenu.className = '';
+        
+        // 카페 마커들만 지도에 표시하도록 설정합니다
+        setCoffeeMarkers(map);
+        setStoreMarkers(null);
+        sethotelMarkers(null);
+        
+    } else if (type === 'store') { // 식당 카테고리가 클릭됐을 때
+    
+        // 식당 카테고리를 선택된 스타일로 변경하고
+        coffeeMenu.className = '';
+        storeMenu.className = 'menu_selected';
+        hotelMenu.className = '';
+        
+        // 식당 마커들만 지도에 표시하도록 설정합니다
+        setCoffeeMarkers(null);
+        setStoreMarkers(map);
+        sethotelMarkers(null);
+        
+    } else if (type === 'hotel') { // 여행 카테고리가 클릭됐을 때
+     
+        // 여행 카테고리를 선택된 스타일로 변경하고
+        coffeeMenu.className = '';
+        storeMenu.className = '';
+        hotelMenu.className = 'menu_selected';
+        
+        // 여행 마커들만 지도에 표시하도록 설정합니다
+        setCoffeeMarkers(null);
+        setStoreMarkers(null);
+        sethotelMarkers(map);  
+    }    
+} 
+
+// 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+var mapTypeControl = new kakao.maps.MapTypeControl();
+
+// 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+// kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+var zoomControl = new kakao.maps.ZoomControl();
+map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+</script>
+
+</body>
+</html>

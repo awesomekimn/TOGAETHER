@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOGAETHER</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/ress.min.css" />
+    <link rel="stylesheet" href="css/app3.css" />
+    <!-- jquery -->
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <!-- fabicon -->
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+    <!-- navbar -->
+    <header>
+        <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+            <a href="logined_index.html" class="navbar-brand">TO GAE THER<br><span class="kr-logo">투개더</span></a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navLinks"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navLinks">
+                <ul class="navbar-nav ms-auto navbar-center">
+                    <li class="nav-item">
+                        <a href="list_hotel.html" class="nav-link">여 행</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="list_restaurant.html" class="nav-link">식 당</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="list_cafe.html" class="nav-link">카 페</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">더보기</a>
+                        <div class="dropdown-menu">
+                            <a href="map.html" class="dropdown-item">지도</a>
+                            <a href="mypage.html" class="dropdown-item">마이페이지</a>
+                            <a href="qna.html" class="dropdown-item">Q&A</a>
+                            <a href="index.html" class="dropdown-item" onclick="alert('로그아웃되었습니다.')">로그아웃</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="listplus">
+            <span>찜 목록</span>
+            <br />
+            <p class="intro">안녕하세요, <span>투개더</span>님!</p>
+        </section>
+        <section>
+            <article class="h-grid" id="h-list-plus">
+                <a href="details_hotel.html" id="lastlist">
+                    <img src="images/JS애견풀빌라_여행.jpg" alt="item1" />
+                    <img class="heart" id="lastheart" src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+                        alt="heartimg" />
+                    <p>JS 애견 풀빌라</p>
+                    <script>
+                        $(function () {
+                            $("#lastheart").on("click", function (e) {
+                                //console.log(e);
+                                e.preventDefault();
+                                $("#lastheart").attr(
+                                    "src",
+                                    "https://cdn-icons.flaticon.com/png/128/2961/premium/2961957.png?token=exp=1655450638~hmac=82d287cb31213afea8822373b6052dab"
+                                );
+                                var timeout = setTimeout(function () {
+                                    $("#lastlist").css("display", "none");
+                                }, 100);
+                            });
+                        });
+                    </script>
+                </a>
+                <a href="#" id="lastlist1">
+                    <img src="http://appdata.hungryapp.co.kr/images/hatdog/ar/2022_06/M165578701208446193.jpeg"
+                        alt="item2" />
+                    <img class="heart" id="lastheart1" src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+                        alt="heartimg" />
+                    <p>도그랜드 글램핑</p>
+                    <script>
+                        $(function () {
+                            $("#lastheart1").on("click", function () {
+                                $("#lastheart1").attr(
+                                    "src",
+                                    "https://cdn-icons.flaticon.com/png/128/2961/premium/2961957.png?token=exp=1655450638~hmac=82d287cb31213afea8822373b6052dab"
+                                );
+                                var timeout = setTimeout(function () {
+                                    $("#lastlist1").css("display", "none");
+                                }, 100);
+                            });
+                        });
+                    </script>
+                </a>
+                <a href="#" id="lastlist2">
+                    <img src="http://appdata.hungryapp.co.kr/images/hatdog/ar/2022_01/M164299848466876193.jpg"
+                        alt="item3" />
+                    <img class="heart" id="lastheart2" src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+                        alt="heartimg" />
+                    <p>씨앤뷰</p>
+                    <script>
+                        $(function () {
+                            $("#lastheart2").on("click", function () {
+                                $("#lastheart2").attr(
+                                    "src",
+                                    "https://cdn-icons.flaticon.com/png/128/2961/premium/2961957.png?token=exp=1655450638~hmac=82d287cb31213afea8822373b6052dab"
+                                );
+                                var timeout = setTimeout(function () {
+                                    $("#lastlist2").css("display", "none");
+                                }, 100);
+                            });
+                        });
+                    </script>
+                </a>
+                <a href="#" id="lastlist3">
+                    <img src="http://appdata.hungryapp.co.kr/images/hatdog/ar/2022_05/M165214838681692193.jpg"
+                        alt="item4" />
+                    <img class="heart" id="lastheart3" src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+                        alt="heartimg" />
+                    <p>느낌 애견 풀빌라</p>
+                    <script>
+                        $(function () {
+                            $("#lastheart3").on("click", function () {
+                                $("#lastheart3").attr(
+                                    "src",
+                                    "https://cdn-icons.flaticon.com/png/128/2961/premium/2961957.png?token=exp=1655450638~hmac=82d287cb31213afea8822373b6052dab"
+                                );
+                                var timeout = setTimeout(function () {
+                                    $("#lastlist3").css("display", "none");
+                                }, 100);
+                            });
+                        });
+                    </script>
+                </a>
+                <a href="#" id="lastlist4">
+                    <img src="http://appdata.hungryapp.co.kr/images/hatdog/ar/2022_04/M164921866701137193.jpg"
+                        alt="item5" />
+                    <img class="heart" id="lastheart4" src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+                        alt="heartimg" />
+                    <p>별캠 키즈 풀빌라</p>
+                    <script>
+                        $(function () {
+                            $("#lastheart4").on("click", function () {
+                                $("#lastheart4").attr(
+                                    "src",
+                                    "https://cdn-icons.flaticon.com/png/128/2961/premium/2961957.png?token=exp=1655450638~hmac=82d287cb31213afea8822373b6052dab"
+                                );
+                                var timeout = setTimeout(function () {
+                                    $("#lastlist4").css("display", "none");
+                                }, 100);
+                            });
+                        });
+                    </script>
+                </a>
+                <a href="#" id="lastlist5">
+                    <img src="http://appdata.hungryapp.co.kr/images/hatdog/ar/2021_04/M16177561589929987.jpg"
+                        alt="item5" />
+                    <img class="heart" id="lastheart5" src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+                        alt="heartimg" />
+                    <p>세화마구간</p>
+                    <script>
+                        $(function () {
+                            $("#lastheart5").on("click", function () {
+                                $("#lastheart5").attr(
+                                    "src",
+                                    "https://cdn-icons.flaticon.com/png/128/2961/premium/2961957.png?token=exp=1655450638~hmac=82d287cb31213afea8822373b6052dab"
+                                );
+                                var timeout = setTimeout(function () {
+                                    $("#lastlist5").css("display", "none");
+                                }, 100);
+                            });
+                        });
+                    </script>
+                </a>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

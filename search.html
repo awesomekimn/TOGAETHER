@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/app1.css">
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <!-- fabicon -->
+    <link rel="icon" href="favicon.ico">
+
+</head>
+<body>
+    <!-- navbar -->
+    <header>
+        <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+            <a href="logined_index.html" class="navbar-brand">TO GAE THER<br><span class="kr-logo">투개더</span></a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navLinks"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navLinks">
+                <ul class="navbar-nav ms-auto navbar-center">
+                    <li class="nav-item">
+                        <a href="list_hotel.html" class="nav-link">여 행</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="list_restaurant.html" class="nav-link">식 당</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="list_cafe.html" class="nav-link">카 페</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">더보기</a>
+                        <div class="dropdown-menu">
+                            <a href="map.html" class="dropdown-item">지도</a>
+                            <a href="mypage.html" class="dropdown-item">마이페이지</a>
+                            <a href="qna.html" class="dropdown-item">Q&A</a>
+                            <a href="index.html" class="dropdown-item" onclick="alert('로그아웃되었습니다.')">로그아웃</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="search-page-container">
+        <div class="inner-container">
+            
+            <!-- search bar -->
+            <div class="search-container">
+                <div class="search-input">
+                    <input type="text" placeholder="지역, 지하철명, 업체명으로 찾아보세요">
+                    <button type="submit" class="search-button">
+                        <img class="search-img" src="images/search.png" alt="search">
+                    </button>
+                </div>
+            </div>
+
+            <div class="search-category">
+                <!-- search category -->
+                <h1 class="search-title">카테고리</h1>
+                <div class="row">
+                    <a href="list_hotel.html" class="category col-4">
+                        <div class="category-header">
+                            <div class="categoryText">
+                                <img src="images/hotel.png" alt="여행">
+                                여행
+                            </div>
+                        </div>
+                    </a>
+                    <a href="list_restaurant.html" class="category col-4">
+                        <div class="category-header">
+                            <div class="categoryText">
+                                <img src="images/room-service.png" alt="식당">
+                                식당
+                            </div>
+                        </div>
+                    </a>
+                    <a href="list_cafe.html" class="category col-4">
+                        <div class="category-header">
+                            <div class="categoryText">
+                                <img src="images/breakfast.png" alt="카페">
+                                카페
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 자주 찾는 여행지 카테고리 -->
+                <h1 class="search-title">자주 찾는 여행지</h1>
+                <div class="row">
+                    <a href="" class="category col-2">
+                        <img src="https://yaimg.yanolja.com/v5/2022/05/10/12/627a5d41b596a8.61309805.png" alt="">
+                        <p>광주광역시</p>
+                    </a>
+                    <a href="" class="category col-2">
+                        <img src="https://yaimg.yanolja.com/v5/2021/07/22/11/60f9549c43df07.64037685.png" alt="">
+                        <p>경상북도</p>
+                    </a>
+                    <a href="" class="category col-2">
+                        <img src="https://yaimg.yanolja.com/v5/2021/04/22/11/60815c13271006.51867200.png" alt="">
+                        <p>강원도</p>
+                    </a>
+                    <a href="" class="category col-2">
+                        <img src="https://yaimg.yanolja.com/v5/2021/04/22/11/60815c18ae8f87.49783234.png" alt="">
+                        <p>부산</p>
+                    </a>
+                    <a href="" class="category col-2">
+                        <img src="https://yaimg.yanolja.com/v5/2021/04/22/11/60815c1e30d404.66480001.png" alt="">
+                        <p>제주도</p>
+                    </a>
+                </div>
+
+                <!-- 최근 검색 기록 -->
+                <h1 class="search-title">
+                    최근 검색
+                    <span class="entire-delete">전체 삭제</span>
+                </h1>
+                <div class="recent-search-box">
+                    최근 검색한 조건이 없습니다.
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <hr>
+        <p class="contact">1599-5319</p>
+        <p>평일 10:00 - 18:00</p>
+        <p class="info">상호명: 투개더 | 대표: 김예지, 조유미, 성문식, 이기쁨, 박준현</p>
+        <p class="info">주소: 서울특별시 강남구 테헤란로 415 | 이메일: togaether@bit.camp</p>
+    </footer>
+</body>
+</html>
