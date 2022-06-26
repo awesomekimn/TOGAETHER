@@ -540,3 +540,12 @@ main h4 {
   margin: 10px auto;
   text-align: center;
 }
+
+/* media query 1100px */
+@media (max-width: 1100px) {
+
+  #mainNavbar {
+      margin: 0;
+      width: auto;
+  }
+}

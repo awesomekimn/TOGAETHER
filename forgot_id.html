@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOGAETHER</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- css -->
-    <link rel="stylesheet" href="css/app2.css">
+    <link rel="stylesheet" href="css/app2.css" />
     <!-- fabicon -->
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="login-form-2">
+      <div class="logo2-2 container">
+        <img
+          src="images/logo.png"
+          width="100px"
+          height="100px"
+          alt="logo"
+          onclick="location.href='index.html'"
+        />
+      </div>
 
-        <div class="logo2-2 container">
-            <img src="images/logo.png" width="100px" height="100px" alt="logo" onclick="location.href='index.html'">
-        </div>
+      <br />
+      <h2>아이디 / 비밀번호 찾기</h2>
 
-        <br>
-        <h2>아이디 / 비밀번호 찾기</h2>
-
-        <form action="login.html">
-            <input type="text" name="id" class="text-field" placeholder="핸드폰번호">
-            <input type="text" name="pw" class="text-field" placeholder="인증번호">
-            <input type="submit" value="로그인" class="submit-btn">
-        </form>
+      <form action="login.html">
+        <input
+          type="number"
+          name="id"
+          class="text-field"
+          placeholder="핸드폰번호"
+        />
+        <input
+          type="number"
+          name="pw"
+          class="text-field"
+          placeholder="인증번호"
+        />
+        <input type="submit" value="로그인" class="submit-btn" />
+      </form>
     </div>
-</body>
-
+  </body>
 </html>
